@@ -217,3 +217,25 @@ services:
     #   - ./.env
 
 #### Docker Compose backup.yml
+
+
+```
+version: '3'
+services:
+  node-app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    environment:
+      - PORT=3000
+    env_file:
+      - ./.env
+```
+
+
+#### Docker Compose Down
+
+` docker-compose -f docker-compose.yml -f docker-compose.dev.yml down -v`
