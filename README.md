@@ -1,32 +1,33 @@
 # Docker use code
 
 * fire create a file with name of Dockerfile
-* FROM node:14.17.6
-  WORKDIR /app
-  COPY package.json .
 
-  ARG  NODE_ENV
-  RUN if [ "$NODE_ENV" = "development" ]; \
-          then npm install; \
-          else npm install --only=production; \
-          fi
+```
+FROM node:14.17.6
+WORKDIR /app
+COPY package.json .
 
-  COPY . ./
-  ENV PORT 3000
-  EXPOSE $PORT
-  CMD ["node" , "index.js"] 
+ARG  NODE_ENV
+RUN if [ "$NODE_ENV" = "development" ]; 
+then npm install; 
+else npm install --only=production; 
+fi
 
+COPY . ./
+ENV PORT 3000
+EXPOSE $PORT
+CMD ["node" , "index.js"]
+```
 
-first line show the image after that show workdir after that copy the package.json file for the node_module 
+first line show the image after that show workdir after that copy the package.json file for the node_module
 
-set the agrument of NODE_ENV for the development or production server use 
+set the agrument of NODE_ENV for the development or production server use
 
-copy all the app files 
+copy all the app files
 
 run on the port 3000
 
 and last hit the command that run your node server
-
 
 ## Docker commands
 
@@ -97,6 +98,7 @@ docker build -t docker-node .
 
 ## Docker Conatiner
 
+```
 version: '3'
 services:
   node-app:
@@ -112,7 +114,7 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=mypass
-
+```
 
 first create a docker-compose.yml file and fill these details
 
@@ -136,7 +138,7 @@ add multiple enviorment variable
 
 `docker volume prune`
 
-#### Delete Container and volume 
+#### Delete Container and volume
 
 `docker rm node-app -fv`
 
@@ -149,6 +151,8 @@ add multiple enviorment variable
 `docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d --build`
 
 #### Docker-compose.yml
+
+```
 version: '3'
 services:
   node-app:
@@ -164,9 +168,11 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=mypass
+```
 
 #### docker-compose.dev.yml
 
+```
 version: '3'
 services:
   node-app:
@@ -184,10 +190,11 @@ services:
     command: npm run dev
     # env_file:
     #   - ./.env
-
+```
 
 #### Docker Compose prod
 
+```
 version:'3'
 
 services:
@@ -196,7 +203,7 @@ services:
 
     build:
 
-    context:.
+     context:.
 
     args:
 
@@ -215,9 +222,9 @@ services:
     # env_file:
 
     #   - ./.env
+```
 
 #### Docker Compose backup.yml
-
 
 ```
 version: '3'
@@ -234,7 +241,6 @@ services:
     env_file:
       - ./.env
 ```
-
 
 #### Docker Compose Down
 
