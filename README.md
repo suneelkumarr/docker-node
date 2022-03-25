@@ -60,6 +60,69 @@ Docker’s public registry is called Docker hub, which allows you to store image
 
 Docker states and Docker Events are used to monitoring docker in the production environment.
 
+### **What is a Container?**
+
+A container is a standard unit of software bundled with dependencies so that applications can be deployed fast and reliably b/w different computing platforms.
+
+* Docker can be visualized as a big ship (docker) carrying huge boxes of products (containers).
+* Docker container doesn’t require the installation of a separate operating system. Docker just relies or makes use of the kernel’s resources and its functionality to allocate them for the CPU and memory it relies on the kernel’s functionality and uses resource isolation for CPU and memory, and separate namespaces to isolate the application’s view of the OS (operating system).
+
+
+![1648184980484.png](image/README/1648184980484.png)
+
+![1648184991682.png](image/README/1648184991682.png)
+
+### Describe the lifecycle of Docker Container?
+
+* **Created:** This is the state where the container has just been created new but not started yet.
+* **Running:** In this state, the container would be running with all its associated processes.
+* **Paused:** This state happens when the running container has been paused.
+* **Stopped:** This state happens when the running container has been stopped.
+* **Deleted:** In this, the container is in a dead state.
+
+![1648185119226.png](image/README/1648185119226.png)
+
+
+### How to use docker for multiple application environments?
+
+* Docker-compose feature of docker will come to help here. In the docker-compose file, we can define multiple services, networks, and containers along with the volume mapping in a clean manner, and then we can just call the command “docker-compose up”.
+* When there are multiple environments involved - it can be either dev, staging, uat, or production servers, we would want to define the server-specific dependencies and processes for running the application. In this case, we can go ahead with creating environment-specific docker-compose files of the name “docker-compose.{environment}.yml” and then based on the environment, we can set up and run the application.
+
+### Differentiate between virtualization and containerization.
+
+
+The question indirectly translates to explaining the difference between virtual machines and Docker containers.
+
+| Virtualization                                                                                                                                                      | Containerization                                                                                                                                                                                                |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| This helps developers to run and host multiple**OS** on the hardware of a single physical server.                                                             | This helps developers to deploy multiple**applications** using the same operating system on a single virtual machine or server.                                                                           |
+| **Hypervisors** provide overall virtual machines to the guest operating systems.                                                                              | **Containers** ensure isolated environment/ user spaces are provided for running the applications. Any changes done within the container do not reflect on the host or other containers of the same host. |
+| These virtual machines form an**abstraction of the system hardware** **layer **this means that each virtual machine on the host acts like a physical machine. | Containers form**abstraction of the application** **layer** which means that each container constitutes a different application.                                                                    |
+
+### What command is used to check for the version of docker client and server?
+
+* The command used to get all version information of the client and server is the `docker version.`
+* To get only the server version details, we can run `docker version --format '{{.Server.Version}}'`
+
+### How many Docker components are there?
+
+There are three docker components, they are - Docker Client, Docker Host, and Docker Registry.
+
+* **Docker Client:** This component performs “build” and “run” operations for the purpose of opening communication with the docker host.
+* **Docker Host:** This component has the main docker daemon and hosts containers and their associated images. The daemon establishes a connection with the docker registry.
+* **Docker Registry:** This component stores the docker images. There can be a public registry or a private one. The most famous public registries are Docker Hub and Docker Cloud.
+
+### What is docker image registry?
+
+* A Docker image registry, in simple terms, is an area where the docker images are stored. Instead of converting the applications to containers each and every time, a developer can directly use the images stored in the registry.
+* This image registry can either be public or private and Docker hub is the most popular and famous public registry available.
+
+
+
+
+
+
+
 ### Dockerfile
 
 * fire create a file with name of Dockerfile
@@ -306,4 +369,6 @@ services:
 
 #### Docker Compose Down
 
-` docker-compose -f docker-compose.yml -f docker-compose.dev.yml down -v`
+` docker-compose -f docker-compose.yml -f docker-compose.dev.yml down -v`The different stages of the docker container from the start of creating it to its end are called the docker container life cycle.
+
+The most important stages are:
