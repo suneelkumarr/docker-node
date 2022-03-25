@@ -1,5 +1,67 @@
 # Docker use code
 
+## System Requirement
+
+##### minimum system requirement
+
+* Windows 11 64-bit: Home or Pro version 21H2 or higher, or Enterprise or Education version 21H2 or higher.
+* Windows 10 64-bit: Home or Pro 2004 (build 19041) or higher, or Enterprise or Education 1909 (build 18363) or higher.
+* Enable the WSL 2 feature on Windows. For detailed instructions, refer to the [Microsoft documentation](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
+* The following hardware prerequisites are required to successfully run WSL 2 on Windows 10 or Windows 11:
+  * 64-bit processor with [Second Level Address Translation (SLAT)](https://en.wikipedia.org/wiki/Second_Level_Address_Translation)
+  * 4GB system RAM
+  * BIOS-level hardware virtualization support must be enabled in the BIOS settings. For more information, see [Virtualization](https://docs.docker.com/desktop/windows/troubleshoot/#virtualization-must-be-enabled).
+* Download and install the [Linux kernel update package](https://docs.microsoft.com/windows/wsl/wsl2-kernel).
+
+### What is Docker?
+
+Docker is an open source platform for building, deploying, and managing containerized applications.
+
+Docker is a software platform for building applications based on  *[containers](https://www.infoworld.com/article/3077875/containers-101-docker-fundamentals.html)* —small and lightweight execution environments that make shared use of the operating system kernel but otherwise run in isolation from one another. While containers have been used in Linux and Unix systems for some time, Docker, an open source project launched in 2013, helped popularize the technology by making it easier than ever for developers to package their software to “build once and run anywhere.”
+
+### What are the advantages of using Docker container?
+
+Here, are a major advantage of using Docker.
+
+* Offers an efficient and easy initial set up
+* Allows you to describe your application lifecycle in detail
+* Simple configuration and interacts with Docker Compose.
+* Documentation provides every bit of information.
+
+### **What are the important features of Docker?**
+
+Here are the essential features of Docker:
+
+* Easy Modeling
+* Version control
+* Placement/Affinity
+* Application Agility
+* Developer Productivity
+* Operational Efficiencies
+
+### What is Docker image?
+
+The Docker image help to create Docker containers. You can create the Docker image with the build command. Due to this, it creates a container that starts when it begins to run. Every docker images are stored in the Docker registry.
+
+### **What is Docker Engine?**
+
+Docker daemon or Docker engine represents the server. The docker daemon and the clients should be run on the same or remote host, which can communicate through command-line client binary and full RESTful API.
+
+### **Explain Registries**
+
+There are two types of registry is
+
+* Public Registry
+* Private Registry
+
+Docker’s public registry is called Docker hub, which allows you to store images privately. In Docker hub, you can store millions of images.
+
+### **How can you monitor the docker in production environments?**
+
+Docker states and Docker Events are used to monitoring docker in the production environment.
+
+### Dockerfile
+
 * fire create a file with name of Dockerfile
 
 ```
