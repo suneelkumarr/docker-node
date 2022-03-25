@@ -118,6 +118,7 @@ There are three docker components, they are - Docker Client, Docker Host, and Do
 * This image registry can either be public or private and Docker hub is the most popular and famous public registry available.
 
 
+![1648185720188.png](image/README/1648185720188.png)
 
 
 
